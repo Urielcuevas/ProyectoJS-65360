@@ -1,163 +1,108 @@
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
-  @font-face {
-    font-family: coco3;
-    src: url(./tipografia/creato/CreatoDisplay-Light.otf);
-  }
-  
-  @font-face {
-    font-family: coco;
-    src: url(./tipografia/cocogoose/Cocogoose-Pro-Bold-Italic-trial.ttf);
-  }
-  
-  @font-face {
-    font-family: coco2;
-    src: url(./tipografia/creato/CreatoDisplay-Black.otf);
-  }
-
-main {
-    padding: 20px;
-    color: white;
-  }
-  
-  footer {
-    padding: 10px;
-    color: white;
-  }
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  header .section img {
-    width: 120px;
-    transition: transform 0.3s ease;
-  }
-  
-  header .section img:hover {
-    transform: scale(1.1);
-  }
-  
-  header .sectionnav nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header .sectionnav nav ul a {
-    margin: 0 15px;
-    color: hsl(220, 6%, 21%);
-    font-size: 1.1rem;
-    text-decoration: none;
-    font-family: 'Arial', sans-serif;
-    position: relative;
-    padding: 5px 0;
-    transition: color 0.3s ease;
-  }
-  
-  header .sectionnav nav a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: hsl(220, 70%, 40%);
-    transition: width 0.3s ease;
-  }
-  
-  header .sectionnav nav a:hover {
-    color: hsl(220, 70%, 40%);
-  }
-  
-  header .sectionnav nav a:hover::after {
-    width: 100%;
-  }
-
-
-
-
-
-
-  main {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-  }
-  
-  .card-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 300px;
+/* Estilos personalizados para la tienda de vapes */
+.product-card {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin: 15px;
+    padding: 15px;
+    border-radius: 8px;
     text-align: center;
-    transition: transform 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: translateY(-10px);
-  }
-  
-  .card img {
+}
+
+.product-img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-  }
-  
-  .card h3 {
-    font-size: 1.5rem;
-    margin: 15px 0;
-    color: #333;
-  }
-  
-  .card p {
-    font-size: 1rem;
-    color: #666;
-    margin: 0 15px 15px;
-  }
-  
-  .card .price {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #28a745;
+}
+
+
+/*FOOTER*/
+
+main, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex-grow: 1; 
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+footer {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto; 
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+.footer-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.logosredes {
+    margin-bottom: 10px;
+}
+
+.logosredes img{
+    width: 50px;
+}
+
+/*nosotros*/
+
+.nosotros {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: black;
+}
+
+.nosotros section {
+    padding: 40px;
+    background: white;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/*CONTACTO*/
+
+.contacto {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.contenedorcontactos {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.contenedorcontactos h2 {
+    color: black;
+}
+
+input, textarea, button {
+    width: 100%;
     margin: 10px 0;
-  }
-  
-  .card button {
-    background-color: #007bff;
-    color: #fff;
+    padding: 8px;
+}
+button {
+    background: #28a745;
+    color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1rem;
     cursor: pointer;
-    margin-bottom: 15px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .card button:hover {
-    background-color: #0056b3;
-  }
+}
+.mensaje {
+    display: none;
+    color: green;
+    margin-top: 10px;
+}

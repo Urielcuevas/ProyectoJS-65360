@@ -1,64 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VapesByhumo</title>
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tienda de Vapes</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <header>
-        <section class="section">
-            <a href="./index.html"><img src="./assets/1.png" alt="Logo"></a>
-        </section>
-        <section class="sectionnav">
-          <nav>
-            <ul>
-              <a href="./index.html">INICIO</a>
-              <a href="./pages/nosotros.html">NOSOTROS</a>
-              <a href="./pages/servicios.html">SERVICIOS</a>
-              <a href="./pages/catalogo.html">CATÁLOGO</a>
-              <a href="./pages/contacto.html">CONTACTO</a>
-            </ul>
-          </nav>
-        </section>
-      </header>
 
-      <main>
-        <h1>Tienda Interactiva</h1>
-        <div class="card-container">
-          <!-- Tarjeta 1 -->
-          <div class="card">
-            <img src="./assets/fume.jpeg " alt="Producto 1">
-            <h3>Fume</h3>
-            <p>Lo mejor del mercado, Fume 5000 puff</p>
-            <div class="price">$19.99</div>
-            <button onclick="comprarProducto(0)">Comprar</button>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="./assets/1.png" alt="Logo" style="height:40px; margin-right:10px;">
+      VapesByHumo
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" 
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item">
+          <a class="nav-link" href="./pages/nosotros.html">Nosotros</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="./pages/contactos.html">Contactos</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="view-cart">Carrito <span class="badge badge-light" id="cart-count">0</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+
+<main>
+  <div class="container my-4">
+    <div class="row" id="product-list">
+    </div>
+  </div>
+
+  <!-- Compra -->
+  <div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="purchase-form">
+          <div class="modal-header">
+            <h5 class="modal-title" id="purchaseModalLabel">Completa tus datos</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-      
-          <!-- Tarjeta 2 -->
-          <div class="card">
-            <img src="./assets/ignite.jpeg" alt="Producto 2">
-            <h3>Ignite</h3>
-            <p>Lo mejor del mercado, Ignite 15000 puff</p>
-            <div class="price">$29.99</div>
-            <button onclick="comprarProducto(1)">Comprar</button>
+          <div class="modal-body">
+            <!-- Formulario de cliente -->
+            <div class="form-group">
+              <label for="customer-name">Nombre</label>
+              <input type="text" class="form-control" id="customer-name" required>
+            </div>
+            <div class="form-group">
+              <label for="customer-email">Email</label>
+              <input type="email" class="form-control" id="customer-email" required>
+            </div>
+            <div class="form-group">
+              <label for="customer-address">Dirección</label>
+              <input type="text" class="form-control" id="customer-address" required>
+            </div>
           </div>
-      
-          <!-- Tarjeta 3 -->
-          <div class="card">
-            <img src="./assets/lostmary.jpeg" alt="Producto 3">
-            <h3>Lost mary</h3>
-            <p>Lo mejor del mercado, Lost Mary 25000 puff</p>
-            <div class="price">$39.99</div>
-            <button onclick="comprarProducto(2)">Comprar</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Confirmar Compra</button>
           </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <div class="logosredes">
+          <a href=""><img src="./assets/WhatsApp_icon.png.webp" alt=""></a>
+          <a href=""><img src="./assets/62-instagram-512.webp" alt=""></a>
         </div>
-      </main>
+        <p>&copy; 2025 BYVAPOR. Todos los derechos reservados.</p>
+    </div>
+</footer>
 
 
-
-
-    <script src="./js/index.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./js/index.js"></script>
 </body>
 </html>
